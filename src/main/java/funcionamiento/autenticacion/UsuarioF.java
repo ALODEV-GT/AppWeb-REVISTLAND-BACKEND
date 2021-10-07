@@ -1,5 +1,6 @@
 package funcionamiento.autenticacion;
 
+import funcionamiento.Funcionamiento;
 import comunes.ConversorJson;
 import comunes.FormatearJson;
 import comunes.LeerRequest;
@@ -10,16 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.autenticacion.UsuarioM;
 
-public class UsuarioF {
-
-    private HttpServletRequest request;
-    private HttpServletResponse response;
+public class UsuarioF extends Funcionamiento{
 
     public UsuarioF(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.request = request;
-        this.response = response;
+       super(request, response);
     }
 
+    @Override
     public void distribuirPost() {
         String accion = this.request.getParameter("accion");
         try {
@@ -54,6 +52,7 @@ public class UsuarioF {
         response.getWriter().append(json);
     }
 
+    @Override
     public void distribuirGet() {
         String accion = this.request.getParameter("accion");
         try {
