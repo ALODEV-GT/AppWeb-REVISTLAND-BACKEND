@@ -5,7 +5,6 @@ public class UsuarioM {
     private String nombre;
     private String contrasena;
     private int idTipoCuenta;
-    private int idUsuario;
 
     public UsuarioM() {
 
@@ -35,13 +34,4 @@ public class UsuarioM {
         this.idTipoCuenta = idTipoCuenta;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-    
 }

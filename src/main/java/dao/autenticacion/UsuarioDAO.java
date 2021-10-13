@@ -65,7 +65,6 @@ public class UsuarioDAO {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        int id = 0;
 
         try {
             conn = Conexion.getConnection();

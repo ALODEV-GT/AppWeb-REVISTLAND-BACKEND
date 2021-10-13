@@ -15,4 +15,5 @@ public class ConversorJson<T> {
         String json = gson.toJson(object , tipo);
         return json;
     }
+    
 }

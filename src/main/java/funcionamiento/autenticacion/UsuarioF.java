@@ -27,8 +27,9 @@ public class UsuarioF extends Funcionamiento{
                     break;
                 case "autenticar":
                     autenticarUsuario();
+                    break;
                 default:
-                    System.out.println("NO EXSITE ESTA OPCION POST");
+                    System.out.println("NO EXSITE ESTA OPCION POST usuario");
             }
         } catch (IOException ex) {
             System.err.println("OCURRIO UN ERROR EN POST USUARIO");
@@ -62,8 +63,9 @@ public class UsuarioF extends Funcionamiento{
                     break;
                 case "verificarTienePerfil":
                     verificarSiTienePerfil();
+                    break;
                 default:
-                    System.out.println("NO EXSITE ESTA OPCION");
+                    System.out.println("NO EXSITE ESTA OPCION GET usuario");
             }
         } catch (IOException ex) {
             System.err.println("OCURRIO UN ERROR EN POST USUARIO");
