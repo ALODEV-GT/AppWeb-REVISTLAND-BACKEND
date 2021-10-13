@@ -14,7 +14,7 @@ public class PerfilDAO {
     //Querys
     private static final String SQL_INSERTAR = "INSERT INTO perfil(nombre_usuario,hobbies,descripcion,gustos,foto) "
             + "VALUES(?,?,?,?,?)";
-    private static final String SQL_ACTUALIZAR= "UPDATE perfil SET hobbies=? ,descripcion=? ,gustos=?,foto=? WHERE nombre_usuario=?";
+    private static final String SQL_ACTUALIZAR = "UPDATE perfil SET hobbies=? ,descripcion=? ,gustos=?,foto=? WHERE nombre_usuario=?";
     private static final String SQL_ENCONTRAR = "SELECT hobbies,descripcion,gustos,foto FROM perfil WHERE nombre_usuario=?";
 
     public void insertar(PerfilM modelo) {
@@ -38,7 +38,7 @@ public class PerfilDAO {
             Conexion.close(stmt);
         }
     }
-    
+
     public void actualizar(PerfilM modelo) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -60,10 +60,6 @@ public class PerfilDAO {
             Conexion.close(stmt);
         }
     }
-    
-    
-    
-    
 
     public PerfilM encontrar(String nombreUsuario) {
         Connection conn = null;

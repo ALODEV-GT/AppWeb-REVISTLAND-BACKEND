@@ -1,5 +1,6 @@
 package controladores;
 
+import funcionamiento.recomendaciones.RecomendacionesF;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +12,8 @@ public class RecomendacionesControl extends Controlador {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       
+       RecomendacionesF funcionamiento = new RecomendacionesF(request, response);
+       funcionamiento.distribuirGet();
     }
 
     @Override

@@ -20,13 +20,14 @@ public class RecomendacionesF extends Funcionamiento {
     @Override
     public void distribuirGet() {
         String accion = this.request.getParameter("accion");
+        System.out.println("accion: " + accion);
         try {
             switch (accion) {
                 case "obtenerRecomendaciones":
                     this.obtenerRecomendaciones();
                     break;
                 default:
-                    System.out.println("NO EXSITE ESTA OPCION GET Recomendaciones F");
+                    System.out.println("NO EXSITE ESTA OPCION GET Recomendaciones Foca");
             }
         } catch (IOException ex) {
             System.err.println("OCURRIO UN ERROR EN POST USUARIO");
@@ -35,7 +36,11 @@ public class RecomendacionesF extends Funcionamiento {
     }
 
     public void obtenerRecomendaciones() throws IOException {
-
+        String nombre = request.getParameter("nombre");
+        ListarRecomendaciones recomendaciones = new ListarRecomendaciones(nombre);
+        String json = recomendaciones.obtenerListaEnJson();
+        System.out.println(json);
+        response.getWriter().append(json);
     }
 
 }
