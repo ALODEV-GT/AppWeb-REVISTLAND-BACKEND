@@ -28,7 +28,7 @@ public class RecomendacionDAO {
                 Double precioMensual = rs.getDouble("r.precio_mensual");
                 Double precioAnual = rs.getDouble("r.precio_anual");
                 String autor = rs.getString("p.nombre_usuario");
-                modelo = new RecomendacionM(nombreRevista, autor, precioMensual, precioAnual);
+                modelo = new RecomendacionM(nombreRevista, autor, precioMensual, precioAnual, idRevista);
             }
 
         } catch (SQLException ex) {

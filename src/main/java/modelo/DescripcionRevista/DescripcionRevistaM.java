@@ -1,24 +1,26 @@
-package modelo.recomendacion;
+package modelo.DescripcionRevista;
 
-public class RecomendacionM {
+public class DescripcionRevistaM {
 
     private int idRevista;
     private String nombreRevista;
+    private String[] categorias;
+    private String[] etiquetas;
     private String autor;
     private double precioMensual;
     private double precioAnual;
-    private int numComentarios;
-    private int numLike;
+    private String descripcionRevista;
 
-    public RecomendacionM() {
+    public DescripcionRevistaM() {
     }
 
-    public RecomendacionM(String nombreRevista, String autor, double precioMensual, double precioAnual, int idRevista) {
+    public DescripcionRevistaM(int idRevista, String nombreRevista, String autor, double precioMensual, double precioAnual, String descripcionRevista) {
+        this.idRevista = idRevista;
         this.nombreRevista = nombreRevista;
         this.autor = autor;
         this.precioMensual = precioMensual;
         this.precioAnual = precioAnual;
-        this.idRevista = idRevista;
+        this.descripcionRevista = descripcionRevista;
     }
 
     public int getIdRevista() {
@@ -28,8 +30,6 @@ public class RecomendacionM {
     public void setIdRevista(int idRevista) {
         this.idRevista = idRevista;
     }
-    
-    
 
     public String getNombreRevista() {
         return nombreRevista;
@@ -37,6 +37,22 @@ public class RecomendacionM {
 
     public void setNombreRevista(String nombreRevista) {
         this.nombreRevista = nombreRevista;
+    }
+
+    public String[] getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(String[] categorias) {
+        this.categorias = categorias;
+    }
+
+    public String[] getEtiquetas() {
+        return etiquetas;
+    }
+
+    public void setEtiquetas(String[] etiquetas) {
+        this.etiquetas = etiquetas;
     }
 
     public String getAutor() {
@@ -63,20 +79,12 @@ public class RecomendacionM {
         this.precioAnual = precioAnual;
     }
 
-    public int getNumComentarios() {
-        return numComentarios;
+    public String getDescripcionRevista() {
+        return descripcionRevista;
     }
 
-    public void setNumComentarios(int numComentarios) {
-        this.numComentarios = numComentarios;
-    }
-
-    public int getNumLike() {
-        return numLike;
-    }
-
-    public void setNumLike(int numLike) {
-        this.numLike = numLike;
+    public void setDescripcionRevista(String descripcionRevista) {
+        this.descripcionRevista = descripcionRevista;
     }
 
 }

@@ -39,7 +39,6 @@ public class RecomendacionesF extends Funcionamiento {
         String nombre = request.getParameter("nombre");
         ListarRecomendaciones recomendaciones = new ListarRecomendaciones(nombre);
         String json = recomendaciones.obtenerListaEnJson();
-        System.out.println(json);
         response.getWriter().append(json);
     }
 
