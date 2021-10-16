@@ -9,6 +9,12 @@ public class VolumenM {
     public VolumenM() {
     }
 
+    public VolumenM(String nombreVolumen, String fechaPublicacion, int idArchivo) {
+        this.nombreVolumen = nombreVolumen;
+        this.fechaPublicacion = fechaPublicacion;
+        this.idArchivo = idArchivo;
+    }
+    
     public int getIdVolumen() {
         return idVolumen;
     }

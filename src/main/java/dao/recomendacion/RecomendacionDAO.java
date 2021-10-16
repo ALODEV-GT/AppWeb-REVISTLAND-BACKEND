@@ -1,6 +1,7 @@
 package dao.recomendacion;
 
 import ConexionDB.Conexion;
+import comunes.Conversor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +10,7 @@ import modelo.recomendacion.RecomendacionM;
 
 public class RecomendacionDAO {
 
-    private static final String SQL_RECOMENDACIONES = "SELECT r.nombre, r.precio_mensual, r.precio_anual, p.nombre_usuario FROM revista r JOIN publicacion p ON(r.id_revista=p.id_revista) WHERE r.id_revista=?";
+    private static final String SQL_RECOMENDACIONES = "SELECT r.nombre, r.precio_mensual, r.precio_anual, p.nombre_usuario, p.fecha_publicacion FROM revista r JOIN publicacion p ON(r.id_revista=p.id_revista) WHERE r.id_revista=?";
 
     public RecomendacionM encontrar(int idRevista) {
         Connection conn = null;
@@ -28,7 +29,8 @@ public class RecomendacionDAO {
                 Double precioMensual = rs.getDouble("r.precio_mensual");
                 Double precioAnual = rs.getDouble("r.precio_anual");
                 String autor = rs.getString("p.nombre_usuario");
-                modelo = new RecomendacionM(nombreRevista, autor, precioMensual, precioAnual, idRevista);
+                String fechaPublicacion = rs.getDate("p.fecha_publicacion").toString();
+                modelo = new RecomendacionM(nombreRevista, autor, precioMensual, precioAnual, idRevista, Conversor.formatearFechaEnAEs(fechaPublicacion));
             }
 
         } catch (SQLException ex) {

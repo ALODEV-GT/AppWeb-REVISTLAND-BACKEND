@@ -9,16 +9,26 @@ public class RecomendacionM {
     private double precioAnual;
     private int numComentarios;
     private int numLike;
+    private String fechaPublicacion;
+
+    public String getFechaPublicacion() {
+        return fechaPublicacion;
+    }
+
+    public void setFechaPublicacion(String fechaPublicacion) {
+        this.fechaPublicacion = fechaPublicacion;
+    }
 
     public RecomendacionM() {
     }
 
-    public RecomendacionM(String nombreRevista, String autor, double precioMensual, double precioAnual, int idRevista) {
+    public RecomendacionM(String nombreRevista, String autor, double precioMensual, double precioAnual, int idRevista, String fechaPublicacion) {
         this.nombreRevista = nombreRevista;
         this.autor = autor;
         this.precioMensual = precioMensual;
         this.precioAnual = precioAnual;
         this.idRevista = idRevista;
+        this.fechaPublicacion = fechaPublicacion;
     }
 
     public int getIdRevista() {
