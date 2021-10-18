@@ -43,6 +43,10 @@ public class DescripcionRevistaF extends Funcionamiento {
                     break;
                 case "obtenerVolumenesRevista":
                     this.obtenerVolumenesRevista();
+                    break;
+                case "obtenerRevistas":
+                    this.obtenerRevistas();
+                    break;
                 default:
                     System.out.println("NO EXSITE ESTA OPCION GET Descripcion revista");
             }
@@ -52,8 +56,13 @@ public class DescripcionRevistaF extends Funcionamiento {
         }
     }
 
-    public void obtenerVolumenesRevista() throws IOException {
-        System.out.println("SI ENTRE");
+    private void obtenerRevistas() throws IOException {
+        String editor = request.getParameter("editor");
+        String json = new ListarRevistasEditor().obtenerJsonRevistasEditor(editor);
+        response.getWriter().append(json);
+    }
+
+    private void obtenerVolumenesRevista() throws IOException {
         int idRevista = Integer.valueOf(request.getParameter("idRevista"));
         String nombreRevista = new RevistaDAO().obtenerNombreRevista(idRevista);
         List<VolumenM> volumenes = new VolumenDAO().obtenerVolumenesRevista(idRevista);
@@ -62,13 +71,12 @@ public class DescripcionRevistaF extends Funcionamiento {
         ComentarioDAO comentarioDao = new ComentarioDAO();
         int numComentarios = comentarioDao.obtenerNumeroComentarios(idPublicacion);
         List<ComentarioM> comentarios = comentarioDao.obtenerComentarios(idPublicacion);
-        RevistaVolumenM revista = new RevistaVolumenM(nombreRevista, Conversor.ListToArrayVolumenM(volumenes), numComentarios, numMeGusta, Conversor.ListToArrayComentarioM(comentarios));
+        RevistaVolumenM revista = new RevistaVolumenM(nombreRevista, Conversor.ListToArrayVolumenM(volumenes), numComentarios, numMeGusta, Conversor.ListToArrayComentarioM(comentarios), idPublicacion, idRevista);
         String json = new ConversorJson<RevistaVolumenM>().convertirObjectAJson(revista, RevistaVolumenM.class);
-        System.out.println(json);
         response.getWriter().append(json);
     }
 
-    public void obtenerDescripcionRevista() throws IOException {
+    private void obtenerDescripcionRevista() throws IOException {
         int idRevista = Integer.valueOf(request.getParameter("idRevista"));
         DescripcionRevistaM descripcionRevista = new DescripcionRevistaDAO().encontrar(idRevista);
         String[] etiquetas = Conversor.ListToArray(new EtiquetaRevistaDAO().obtenerEtiquetasRevista(idRevista));

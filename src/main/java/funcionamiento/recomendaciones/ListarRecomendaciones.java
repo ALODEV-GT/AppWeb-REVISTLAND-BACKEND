@@ -5,6 +5,7 @@ import dao.interacciones.ComentarioDAO;
 import dao.interacciones.MeGustaDAO;
 import dao.perfil.PreferenciasCategoriaDAO;
 import dao.perfil.PreferenciasEtiquetaDAO;
+import dao.permisosRevista.PermisosRevistaDAO;
 import dao.publicar.CategoriaRevistaDAO;
 import dao.publicar.EtiquetaRevistaDAO;
 import dao.publicar.PublicacionDAO;
@@ -66,17 +67,20 @@ public class ListarRecomendaciones {
         PublicacionDAO daoP = new PublicacionDAO();
         ComentarioDAO daoC = new ComentarioDAO();
         MeGustaDAO daoMG = new MeGustaDAO();
-        
+        PermisosRevistaDAO daoPermisoRevista = new PermisosRevistaDAO();
+
         for (Integer id : idCoincidencias) {
             recomendacion = daoR.encontrar(id);
             int idPublicacion = daoP.obtenerIdPublicacion(id);
-            int numComentarios = daoC.obtenerNumeroComentarios(idPublicacion);
-            int numMeGustas  = daoMG.obtenerNumeroMeGusta(idPublicacion);
-            recomendacion.setNumComentarios(numComentarios);
-            recomendacion.setNumLike(numMeGustas);
-            recomendaciones.add(recomendacion);
+            if (daoPermisoRevista.sePuedeSuscribir(idPublicacion).isPermitir()) {
+                int numComentarios = daoC.obtenerNumeroComentarios(idPublicacion);
+                int numMeGustas = daoMG.obtenerNumeroMeGusta(idPublicacion);
+                recomendacion.setNumComentarios(numComentarios);
+                recomendacion.setNumLike(numMeGustas);
+                recomendaciones.add(recomendacion);
+            }
         }
-        
+
         String json = new Gson().toJson(recomendaciones);
 
         return json;

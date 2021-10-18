@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import modelo.publicarRevista.RevistaM;
 
 public class RevistaDAO {
@@ -13,6 +15,7 @@ public class RevistaDAO {
             + ",precio_anual,es_interactiva,permitir_suscripciones) VALUES(?,?,?,?,1,1)";
     private static final String SQL_OBTENER_ID_ULTIMO_INSERTADO = "SELECT id_revista FROM revista ORDER BY id_revista DESC LIMIT 1";
     private static final String SQL_OBTENER_NOMBRE_REVISTA = "SELECT nombre FROM revista WHERE id_revista=?";
+    private static final String SQL_OBTENER_ID_REVISTAS_EDITOR = "SELECT r.id_revista FROM revista r JOIN publicacion p ON(r.id_revista=p.id_revista) WHERE p.nombre_usuario=?";
     
     public void insertar(RevistaM modelo) {
         Connection conn = null;
@@ -84,5 +87,31 @@ public class RevistaDAO {
             Conexion.close(stmt);
         }
         return nombreRevista;
+    }
+    
+    public List<Integer> obtenerIdRevistasEditor(String editor){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        List<Integer> list = new ArrayList<>();
+
+        try {
+            conn = Conexion.getConnection();
+            stmt = conn.prepareStatement(SQL_OBTENER_ID_REVISTAS_EDITOR);
+            stmt.setString(1, editor);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                int idRevista = rs.getInt("r.id_revista");
+                list.add(idRevista);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(stmt);
+        }
+        return list;
     }
 }

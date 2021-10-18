@@ -10,16 +10,38 @@ public class RevistaVolumenM {
     private int numComentarios;
     private int numMeGustas;
     private ComentarioM[] comentarios;
+    private int idPublicacion;
+    private int idRevista;
 
     public RevistaVolumenM() {
     }
 
-    public RevistaVolumenM(String nombreRevista, VolumenM[] volumenes, int numComentarios, int numMeGustas, ComentarioM[] comentarios) {
+    public RevistaVolumenM(String nombreRevista, VolumenM[] volumenes, int numComentarios, int numMeGustas, ComentarioM[] comentarios, int idPublicacion, int idRevista) {
         this.nombreRevista = nombreRevista;
         this.volumenes = volumenes;
         this.numComentarios = numComentarios;
         this.numMeGustas = numMeGustas;
         this.comentarios = comentarios;
+        this.idPublicacion = idPublicacion;
+        this.idRevista = idRevista;
+    }
+
+    public int getIdRevista() {
+        return idRevista;
+    }
+
+    public void setIdRevista(int idRevista) {
+        this.idRevista = idRevista;
+    }
+    
+    
+
+    public int getIdPublicacion() {
+        return idPublicacion;
+    }
+
+    public void setIdPublicacion(int idPublicacion) {
+        this.idPublicacion = idPublicacion;
     }
 
     public String getNombreRevista() {
