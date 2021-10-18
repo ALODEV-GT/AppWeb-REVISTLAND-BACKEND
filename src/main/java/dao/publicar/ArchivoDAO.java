@@ -14,6 +14,7 @@ public class ArchivoDAO {
             + "VALUES(?,?)";
     private static final String SQL_OBTENER_ID_ULTIMO_INSERTADO = "SELECT id_archivo FROM archivo ORDER BY id_archivo DESC LIMIT 1";
     private static final String SQL_OBTENER_ARCHIVO = "SELECT nombre_archivo, archivo FROM archivo WHERE id_archivo=?";
+    private static final String SQL_ELIMINAR_ARCHIVO = "DELETE FROM archivo WHERE id_archivo=?";
 
     public void insertar(InputStream archivo, String nombreArchivo) {
         Connection conn = null;
@@ -86,4 +87,23 @@ public class ArchivoDAO {
         }
         return archivo;
     }
+
+    public void eliminarArchivo(int idArchivo) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = Conexion.getConnection();
+            stmt = conn.prepareStatement(SQL_ELIMINAR_ARCHIVO);
+            stmt.setInt(1, idArchivo);
+
+            stmt.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(stmt);
+        }
+    }
+
 }

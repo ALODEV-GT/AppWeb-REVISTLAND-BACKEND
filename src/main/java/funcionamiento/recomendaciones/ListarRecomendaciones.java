@@ -31,6 +31,7 @@ public class ListarRecomendaciones {
         PreferenciasCategoriaDAO daoPC = new PreferenciasCategoriaDAO();
         PreferenciasEtiquetaDAO daoPE = new PreferenciasEtiquetaDAO();
         List<String> categorias = daoPC.obtenerCategoriasUsuario(nombreUsuario);
+
         List<String> etiquetas = daoPE.obtenerEtiquetasUsuario(nombreUsuario);
 
         for (String categoria : categorias) {
@@ -48,6 +49,7 @@ public class ListarRecomendaciones {
         }
 
         List<Integer> idRevistasSuscritas = new SuscripcionDAO().listarIdRevistasSuscritas(nombreUsuario);
+
         this.quitarIdRevistasSuscritas(IdCoincidencias, idRevistasSuscritas);
 
         return this.obtenerRecomendaciones(IdCoincidencias);

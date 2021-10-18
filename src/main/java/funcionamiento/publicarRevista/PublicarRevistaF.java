@@ -98,7 +98,20 @@ public class PublicarRevistaF extends Funcionamiento {
 
     @Override
     public void distribuirGet() {
+        String accion = this.request.getParameter("accion");
+        switch (accion) {
+            case "eliminarVolumen":
+                eliminarVolumen();
+                break;
+            default:
+                System.out.println("NO EXSITE ESTA OPCION POST publicar revista");
+        }
+    }
 
+    private void eliminarVolumen() {
+        int idArchivo = Integer.valueOf(request.getParameter("idArchivo"));
+        new VolumenDAO().eliminarVolumen(idArchivo);
+        new ArchivoDAO().eliminarArchivo(idArchivo);
     }
 
 }

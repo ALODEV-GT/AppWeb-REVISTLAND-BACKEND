@@ -15,6 +15,7 @@ public class VolumenDAO {
     private static final String SQL_INSERTAR = "INSERT INTO volumen(id_revista,nombre_volumen,fecha_publicacion"
             + ",id_archivo) VALUES(?,?,?,?)";
     private static final String SQL_ENCONTRAR_VOLUMENES = "SELECT id_volumen, id_revista, nombre_volumen, fecha_publicacion, id_archivo FROM volumen WHERE id_revista=?";
+    private static final String SQL_ELIMAR_VOLUMEN = "DELETE FROM volumen WHERE id_archivo=?";
 
     public void insertar(VolumenM modelo) {
         Connection conn = null;
@@ -31,7 +32,6 @@ public class VolumenDAO {
             stmt.executeUpdate();
 
         } catch (SQLException ex) {
-            System.err.println("Error al insertar el volumen en la base de datos");
             ex.printStackTrace(System.out);
         } finally {
             Conexion.close(stmt);
@@ -54,7 +54,7 @@ public class VolumenDAO {
                 String fechaPublicacion = rs.getString("fecha_publicacion");
                 int idArchivo = rs.getInt("id_archivo");
 
-                VolumenM volumen = new VolumenM(nombre,Conversor.formatearFechaEnAEs(fechaPublicacion), idArchivo);
+                VolumenM volumen = new VolumenM(nombre, Conversor.formatearFechaEnAEs(fechaPublicacion), idArchivo);
                 list.add(volumen);
             }
 
@@ -66,5 +66,23 @@ public class VolumenDAO {
         }
 
         return list;
+    }
+
+    public void eliminarVolumen(int idArchivo) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = Conexion.getConnection();
+            stmt = conn.prepareStatement(SQL_ELIMAR_VOLUMEN);
+            stmt.setInt(1, idArchivo);
+
+            stmt.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(stmt);
+        }
     }
 }

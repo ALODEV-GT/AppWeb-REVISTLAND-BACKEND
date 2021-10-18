@@ -15,10 +15,10 @@ import modelo.suscripcion.SuscripcionM;
 
 public class SuscripcionDAO {
 
-    private static final String SQL_ID_REVISTAS_SUSCRITAS = "SELECT id_revista FROM suscripcion WHERE nombre_usuario=? & vigente=1";
+    private static final String SQL_ID_REVISTAS_SUSCRITAS = "SELECT id_revista FROM suscripcion WHERE nombre_usuario=? AND vigente=1";
     private static final String SQL_INSERTAR = "INSERT INTO suscripcion(id_tipo_pago,id_revista,fecha_suscripcion,fecha_finalizacion,nombre_usuario,costo_total,ganancia_editor,cuota_por_servicio,vigente)"
             + " VALUES(?,?,?,?,?,?,?,?,?)";
-    private static final String SQL_REVISTAS_SUSCRITAS = "SELECT r.nombre, p.nombre_usuario, s.fecha_suscripcion, s.fecha_finalizacion, r.id_revista FROM revista r JOIN publicacion p ON(r.id_revista=p.id_revista) JOIN suscripcion s ON(r.id_revista=s.id_revista) WHERE s.vigente=1 & s.nombre_usuario=?";
+    private static final String SQL_REVISTAS_SUSCRITAS = "SELECT r.nombre, p.nombre_usuario, s.fecha_suscripcion, s.fecha_finalizacion, r.id_revista FROM revista r JOIN publicacion p ON(r.id_revista=p.id_revista) JOIN suscripcion s ON(r.id_revista=s.id_revista) WHERE s.vigente=1 AND s.nombre_usuario=?";
 
     public void registrarSuscripcion(SuscripcionM modelo) {
         Connection conn = null;
