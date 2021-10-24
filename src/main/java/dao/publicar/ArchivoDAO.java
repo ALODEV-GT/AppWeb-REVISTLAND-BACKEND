@@ -10,7 +10,7 @@ import modelo.archivo.ArchivoM;
 
 public class ArchivoDAO {
 
-    public static final String SQL_INSERTAR = "INSERT INTO archivo(archivo,nombre_archivo) "
+    private static final String SQL_INSERTAR = "INSERT INTO archivo(archivo,nombre_archivo) "
             + "VALUES(?,?)";
     private static final String SQL_OBTENER_ID_ULTIMO_INSERTADO = "SELECT id_archivo FROM archivo ORDER BY id_archivo DESC LIMIT 1";
     private static final String SQL_OBTENER_ARCHIVO = "SELECT nombre_archivo, archivo FROM archivo WHERE id_archivo=?";

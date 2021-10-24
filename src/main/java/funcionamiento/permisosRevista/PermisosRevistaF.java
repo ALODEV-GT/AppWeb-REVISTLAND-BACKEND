@@ -4,7 +4,6 @@ import comunes.ConversorJson;
 import comunes.FormatearJson;
 import comunes.LeerRequest;
 import dao.permisosRevista.PermisosRevistaDAO;
-import dao.publicar.PublicacionDAO;
 import funcionamiento.Funcionamiento;
 import java.io.IOException;
 import javax.servlet.ServletException;

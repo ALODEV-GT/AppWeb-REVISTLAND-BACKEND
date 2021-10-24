@@ -16,6 +16,7 @@ public class RevistaDAO {
     private static final String SQL_OBTENER_ID_ULTIMO_INSERTADO = "SELECT id_revista FROM revista ORDER BY id_revista DESC LIMIT 1";
     private static final String SQL_OBTENER_NOMBRE_REVISTA = "SELECT nombre FROM revista WHERE id_revista=?";
     private static final String SQL_OBTENER_ID_REVISTAS_EDITOR = "SELECT r.id_revista FROM revista r JOIN publicacion p ON(r.id_revista=p.id_revista) WHERE p.nombre_usuario=?";
+    private static final String SQL_OBTENER_ID_REVISTAS = "SELECT id_revista FROM revista";
     
     public void insertar(RevistaM modelo) {
         Connection conn = null;
@@ -103,6 +104,31 @@ public class RevistaDAO {
 
             while (rs.next()) {
                 int idRevista = rs.getInt("r.id_revista");
+                list.add(idRevista);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(stmt);
+        }
+        return list;
+    }
+    
+    public List<Integer> obtenerIdRevistas(){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        List<Integer> list = new ArrayList<>();
+
+        try {
+            conn = Conexion.getConnection();
+            stmt = conn.prepareStatement(SQL_OBTENER_ID_REVISTAS);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                int idRevista = rs.getInt("id_revista");
                 list.add(idRevista);
             }
 
