@@ -47,11 +47,8 @@ public class ReportesEditorF extends Funcionamiento {
     }
 
     private void reporteComentarios() {
-//        String fechaInicial = request.getParameter("fechaInicial");
-//        String fechaFinal = request.getParameter("fechaFinal");
-
-        String fechaInicial = "2021-01-01";
-        String fechaFinal = "2021-12-31";
+        String fechaInicial = request.getParameter("fechaInicial");
+        String fechaFinal = request.getParameter("fechaFinal");
 
         final String nombreReporteJasper = "ReporteComentariosEditor.jasper";
         List<ReporteComentariosBean> resources = new ReporteComentariosDAO().obtenerDatosReporte(fechaInicial, fechaFinal);
@@ -60,11 +57,8 @@ public class ReportesEditorF extends Funcionamiento {
     }
 
     private void reporteSuscripciones() {
-//        String fechaInicial = request.getParameter("fechaInicial");
-//        String fechaFinal = request.getParameter("fechaFinal");
-
-        String fechaInicial = "2021-01-01";
-        String fechaFinal = "2021-12-31";
+        String fechaInicial = request.getParameter("fechaInicial");
+        String fechaFinal = request.getParameter("fechaFinal");
 
         final String nombreReporteJasper = "ReporteSuscripciones.jasper";
         List<ReporteSuscripcionesBean> resources = new ReporteSuscripcionesDAO().obtenerDatosReporte(fechaInicial, fechaFinal);
@@ -73,11 +67,8 @@ public class ReportesEditorF extends Funcionamiento {
     }
 
     private void reporteRevistasMasGustadas() {
-        //        String fechaInicial = request.getParameter("fechaInicial");
-//        String fechaFinal = request.getParameter("fechaFinal");
-
-        String fechaInicial = "2021-01-01";
-        String fechaFinal = "2021-12-31";
+        String fechaInicial = request.getParameter("fechaInicial");
+        String fechaFinal = request.getParameter("fechaFinal");
         final String nombreReporteJasper = "ReporteRevistasMasGustadas.jasper";
 
         List<ReporteRevistaMasGustadaBean> resources = new ReporteRevistasMasGustadaDAO().obtenerDatosReporte(fechaInicial, fechaFinal);
@@ -86,11 +77,8 @@ public class ReportesEditorF extends Funcionamiento {
     }
 
     private void reporteGanancias() {
-        //        String fechaInicial = request.getParameter("fechaInicial");
-//        String fechaFinal = request.getParameter("fechaFinal");
-
-        String fechaInicial = "2021-01-01";
-        String fechaFinal = "2021-12-31";
+        String fechaInicial = request.getParameter("fechaInicial");
+        String fechaFinal = request.getParameter("fechaFinal");
         final String nombreReporteJasper = "ReporteGanancias.jasper";
 
         List<ReporteGananciaTotalBean> resources = new ReporteGananciaTotalDAO().obtenerDatosReporte(fechaInicial, fechaFinal);
