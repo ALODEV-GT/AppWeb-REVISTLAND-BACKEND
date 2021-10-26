@@ -33,13 +33,16 @@
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/controladores/CostoDiarioControlador.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/permisosRevista/PermisosRevistaDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/beans/registro/comunes/RegistroSuscripcion.java
+/home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/reportes/administrador/ReporteMasComentadasDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/modelo/archivo/ArchivoM.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/beans/reportes/editor/ReporteComentariosBean.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/anuncio/TipoAnuncioDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/anuncio/CategoriaAnuncioDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/publicar/ArchivoDAO.java
+/home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/reportes/administrador/ReportePopularesDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/beans/registro/administrador/RegistroGananciaAnuncio.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/funcionamiento/descripcionRevista/ListarRevistasEditor.java
+/home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/reportes/administrador/ReporteGananciaAnuncioDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/interacciones/MeGustaDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/ConexionDB/Conexion.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/beans/reportes/administrador/ReportePopularesBean.java
@@ -47,6 +50,7 @@
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/beans/comunes/DatosRevista.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/modelo/permisosRevista/PermitirM.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/modelo/fechaGlobal/FechaM.java
+/home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/reportes/administrador/ReporteGananciaRevistaDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/reportes/editor/ReporteGananciaTotalDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/reportes/editor/ReporteComentariosDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/funcionamiento/suscripcion/SuscripcionF.java
@@ -54,6 +58,7 @@
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/funcionamiento/permisosRevista/EvaluarPermiso.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/modelo/Anuncio/Precio.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/perfil/PreferenciasEtiquetaDAO.java
+/home/midik/NetBeansProjects/REVISTLAND/src/main/java/comunes/FuncionesBasicas.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/beans/reportes/administrador/ReporteGananciaRevistaBean.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/funcionamiento/autenticacion/UsuarioF.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/modelo/publicarRevista/RevistaM.java
@@ -83,6 +88,7 @@
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/publicar/RevistaDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/modelo/interacciones/ComentarioM.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/publicar/costoPorDia/CostoPorDiaDAO.java
+/home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/reportes/administrador/ReporteGananciaTotalDATOS.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/dao/perfil/PerfilDAO.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/funcionamiento/fechaGlobal/FechaGlobalF.java
 /home/midik/NetBeansProjects/REVISTLAND/src/main/java/modelo/perfil/CategoriaM.java
