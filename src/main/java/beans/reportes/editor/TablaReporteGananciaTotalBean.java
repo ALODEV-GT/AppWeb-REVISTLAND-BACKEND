@@ -7,14 +7,24 @@ import java.util.List;
 public class TablaReporteGananciaTotalBean {
 
     private DatosRevista datosRevista;
+    private double gananciaTotal;
     List<RegistroGanancia> registrosGanancias;
 
     public TablaReporteGananciaTotalBean() {
     }
 
-    public TablaReporteGananciaTotalBean(DatosRevista datosRevista, List<RegistroGanancia> registrosGanancias) {
+    public TablaReporteGananciaTotalBean(DatosRevista datosRevista, double gananciaTotal, List<RegistroGanancia> registrosGanancias) {
         this.datosRevista = datosRevista;
         this.registrosGanancias = registrosGanancias;
+        this.gananciaTotal = gananciaTotal;
+    }
+
+    public double getGananciaTotal() {
+        return gananciaTotal;
+    }
+
+    public void setGananciaTotal(double gananciaTotal) {
+        this.gananciaTotal = gananciaTotal;
     }
 
     public DatosRevista getDatosRevista() {

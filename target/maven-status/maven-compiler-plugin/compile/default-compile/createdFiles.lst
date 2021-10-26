@@ -25,8 +25,10 @@ controladores/InteraccionesControlador.class
 beans/registro/comunes/RegistroGanancia.class
 beans/reportes/administrador/ReporteMasComentadaBean.class
 funcionamiento/permisosRevista/PermisosRevistaF.class
+funcionamiento/reportesAdministrador/ReportesAdministradorF.class
 modelo/revistasConsumidor/MiRevistaConsumidorM.class
 controladores/PermisosRevistaControlador.class
+dao/reportes/editor/ReporteComentariosDAO.class
 beans/reportes/administrador/ReporteGananciaRevistaBean.class
 dao/publicar/RevistaDAO.class
 controladores/AnunciosControlador.class
@@ -46,6 +48,7 @@ beans/registro/administrador/RegistroGananciaAnuncio.class
 controladores/Controlador.class
 modelo/perfil/CategoriaM.class
 beans/reportes/editor/TablaReporteGananciaTotalBean.class
+controladores/ReportesEditorControlador.class
 dao/recomendacion/RecomendacionDAO.class
 comunes/ConversorJson.class
 dao/anuncio/CategoriaAnuncioDAO.class
@@ -53,10 +56,12 @@ ConexionDB/Conexion.class
 modelo/publicarRevista/PublicacionM.class
 modelo/suscripcion/SuscripcionM.class
 funcionamiento/Funcionamiento.class
+dao/reportes/editor/ReporteSuscripcionesDAO.class
 beans/registro/administrador/RegistroGananciaRevista.class
 modelo/Anuncio/AnuncioM.class
 beans/registro/comunes/RegistroMeGusta.class
 dao/publicar/ArchivoDAO.class
+funcionamiento/reportes/GenerarReporte.class
 funcionamiento/anuncios/ListarRecomendacionesAnuncios.class
 dao/perfil/PreferenciasCategoriaDAO.class
 funcionamiento/costoDiario/CostoDiarioF.class
@@ -77,7 +82,9 @@ dao/publicar/VolumenDAO.class
 funcionamiento/fechaGlobal/FechaGlobalF.class
 modelo/Anuncio/AnuncioMostrarM.class
 funcionamiento/recomendaciones/RecomendacionesF.class
+controladores/ReportesAdministradorControlador.class
 dao/descripcionRevista/DescripcionRevistaDAO.class
+dao/reportes/editor/ReporteRevistasMasGustadaDAO.class
 comunes/FormatearJson.class
 beans/comunes/DatosRevista.class
 beans/registro/comunes/RegistroSuscripcion.class
@@ -95,6 +102,7 @@ controladores/CostoDiarioControlador.class
 modelo/recomendacion/RecomendacionM.class
 modelo/Anuncio/Precio.class
 controladores/GeneralesControlador.class
+funcionamiento/reportesEditor/ReportesEditorF.class
 beans/reportes/editor/ReporteComentariosBean.class
 modelo/interacciones/MeGustaM.class
 dao/perfil/EtiquetaDAO.class
@@ -106,6 +114,7 @@ funcionamiento/suscripcion/CalculoPago.class
 comunes/Conversor.class
 funcionamiento/suscripcion/SuscripcionF.class
 controladores/PublicarRevistaControlador.class
+dao/reportes/editor/ReporteGananciaTotalDAO.class
 funcionamiento/descripcionRevista/ListarRevistasEditor.class
 funcionamiento/interacciones/InteraccionesF.class
 modelo/interacciones/ComentarioM.class

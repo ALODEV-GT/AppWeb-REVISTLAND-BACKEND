@@ -2,7 +2,7 @@ package beans.registro.administrador;
 
 public class RegistroGananciaAnuncio {
 
-    private String fechaCompra;
+    private String fichaCompra;
     private String tipoAnuncio;
     private double precioPorDia;
     private int numDias;
@@ -11,8 +11,8 @@ public class RegistroGananciaAnuncio {
     public RegistroGananciaAnuncio() {
     }
 
-    public RegistroGananciaAnuncio(String fechaCompra, String tipoAnuncio, double precioPorDia, int numDias, double ganancia) {
-        this.fechaCompra = fechaCompra;
+    public RegistroGananciaAnuncio(String fichaCompra, String tipoAnuncio, double precioPorDia, int numDias, double ganancia) {
+        this.fichaCompra = fichaCompra;
         this.tipoAnuncio = tipoAnuncio;
         this.precioPorDia = precioPorDia;
         this.numDias = numDias;
@@ -20,11 +20,11 @@ public class RegistroGananciaAnuncio {
     }
 
     public String getFichaCompra() {
-        return fechaCompra;
+        return fichaCompra;
     }
 
     public void setFichaCompra(String fichaCompra) {
-        this.fechaCompra = fichaCompra;
+        this.fichaCompra = fichaCompra;
     }
 
     public String getTipoAnuncio() {
