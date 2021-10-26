@@ -2,10 +2,8 @@ package dao.reportes.administrador;
 
 import ConexionDB.Conexion;
 import beans.comunes.DatosRevista;
-import beans.registro.comunes.RegistroMeGusta;
 import beans.registro.comunes.RegistroSuscripcion;
 import beans.reportes.administrador.ReportePopularesBean;
-import beans.reportes.editor.ReporteRevistaMasGustadaBean;
 import comunes.Conversor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

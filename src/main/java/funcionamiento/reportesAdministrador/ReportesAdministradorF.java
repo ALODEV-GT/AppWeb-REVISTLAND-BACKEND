@@ -3,10 +3,12 @@ package funcionamiento.reportesAdministrador;
 import beans.reportes.administrador.ReporteGananciaAnuncioBean;
 import beans.reportes.administrador.ReporteGananciaRevistaBean;
 import beans.reportes.administrador.ReporteGananciaTotalBean;
+import beans.reportes.administrador.ReporteMasComentadaBean;
 import beans.reportes.administrador.ReportePopularesBean;
 import dao.reportes.administrador.ReporteGananciaAnuncioDAO;
 import dao.reportes.administrador.ReporteGananciaRevistaDAO;
 import dao.reportes.administrador.ReporteGananciaTotalDATOS;
+import dao.reportes.administrador.ReporteMasComentadasDAO;
 import dao.reportes.administrador.ReportePopularesDAO;
 import funcionamiento.Funcionamiento;
 import funcionamiento.reportes.GenerarReporte;
@@ -93,8 +95,8 @@ public class ReportesAdministradorF extends Funcionamiento {
 //        String fechaFinal = request.getParameter("fechaFinal");
 
         String fechaInicial = "2021-01-01";
-        String fechaFinal = "2021-12-31";
-        final String nombreReporteJasper = ".jasper";
+        String fechaFinal = "2022-12-31";
+        final String nombreReporteJasper = "ReporteRevistasPopulares.jasper";
 
         List<ReportePopularesBean> resources = new ReportePopularesDAO().obtenerDatosReporte(fechaInicial, fechaFinal);
         GenerarReporte<ReportePopularesBean> generador = new GenerarReporte<>(this.response, false);
@@ -106,11 +108,11 @@ public class ReportesAdministradorF extends Funcionamiento {
 //        String fechaFinal = request.getParameter("fechaFinal");
 
         String fechaInicial = "2021-01-01";
-        String fechaFinal = "2021-12-31";
-        final String nombreReporteJasper = ".jasper";
+        String fechaFinal = "2022-12-31";
+        final String nombreReporteJasper = "ReporteMasComentadas.jasper";
 
-//        List<> resources =
-//        GenerarReporte<> generador = new GenerarReporte<>(this.response, false);
-//        generador.generarReporte(nombreReporteJasper, resources, "ReporteRevistasMasComentadas" + fechaInicial + "A" + fechaFinal);
+        List<ReporteMasComentadaBean> resources = new ReporteMasComentadasDAO().obtenerDatosReporte(fechaInicial, fechaFinal);
+        GenerarReporte<ReporteMasComentadaBean> generador = new GenerarReporte<>(this.response, false);
+        generador.generarReporte(nombreReporteJasper, resources, "ReporteRevistasMasComentadas" + fechaInicial + "A" + fechaFinal);
     }
 }
