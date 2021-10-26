@@ -7,7 +7,7 @@ public class ReporteGananciaRevistaBean {
     private double ingresoTotal;
     private double costoTotal;
     private double gananciaTotal;
-    List<TablaReporteGananciaRevistaBean> tabla;
+    private List<TablaReporteGananciaRevistaBean> tabla;
 
     public ReporteGananciaRevistaBean() {
     }

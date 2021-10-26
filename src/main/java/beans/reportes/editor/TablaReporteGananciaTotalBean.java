@@ -8,7 +8,7 @@ public class TablaReporteGananciaTotalBean {
 
     private DatosRevista datosRevista;
     private double gananciaTotal;
-    List<RegistroGanancia> registrosGanancias;
+    private List<RegistroGanancia> registrosGanancias;
 
     public TablaReporteGananciaTotalBean() {
     }

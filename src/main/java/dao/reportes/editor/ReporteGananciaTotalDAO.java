@@ -5,6 +5,7 @@ import beans.comunes.DatosRevista;
 import beans.registro.comunes.RegistroGanancia;
 import beans.reportes.editor.ReporteGananciaTotalBean;
 import beans.reportes.editor.TablaReporteGananciaTotalBean;
+import comunes.Conversor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -111,7 +112,7 @@ public class ReporteGananciaTotalDAO {
                 String nombreUsuario = rs.getString("nombre_usuario");
                 String fechaSuscripcion = rs.getString("fecha_suscripcion");
                 double gananciaEditor = rs.getDouble("ganancia_editor");
-                registro = new RegistroGanancia(nombreUsuario, fechaSuscripcion, gananciaEditor);
+                registro = new RegistroGanancia(nombreUsuario, Conversor.formatearFechaEnAEs(fechaSuscripcion), gananciaEditor);
                 lista.add(registro);
             }
 

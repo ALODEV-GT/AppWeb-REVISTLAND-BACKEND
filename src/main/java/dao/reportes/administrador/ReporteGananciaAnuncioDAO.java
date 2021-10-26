@@ -4,6 +4,7 @@ import ConexionDB.Conexion;
 import beans.registro.administrador.RegistroGananciaAnuncio;
 import beans.reportes.administrador.ReporteGananciaAnuncioBean;
 import beans.reportes.administrador.TablaReporteGananciaAnuncioBean;
+import comunes.Conversor;
 import static comunes.FuncionesBasicas.formatearDouble;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -85,7 +86,7 @@ public class ReporteGananciaAnuncioDAO {
                 double precioPorDia = rs.getDouble("precio_por_dia");
                 int numDias = rs.getInt("a.cantidad_dias");
                 double ganancia = rs.getDouble("p.costo");
-                registro = new RegistroGananciaAnuncio(fechaCompra, tipoAnucio, precioPorDia, numDias, ganancia);
+                registro = new RegistroGananciaAnuncio(Conversor.formatearFechaEnAEs(fechaCompra), tipoAnucio, precioPorDia, numDias, ganancia);
                 registros.add(registro);
             }
             

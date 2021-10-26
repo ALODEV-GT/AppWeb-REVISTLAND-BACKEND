@@ -4,6 +4,7 @@ import ConexionDB.Conexion;
 import beans.comunes.DatosRevista;
 import beans.registro.comunes.RegistroMeGusta;
 import beans.reportes.editor.ReporteRevistaMasGustadaBean;
+import comunes.Conversor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -94,7 +95,7 @@ public class ReporteRevistasMasGustadaDAO {
             while (rs.next()) {
                 String nombreUsuario = rs.getString("nombre_usuario");
                 String fechaLike = rs.getString("fecha_like");
-                registro = new RegistroMeGusta(nombreUsuario, fechaLike);
+                registro = new RegistroMeGusta(nombreUsuario, Conversor.formatearFechaEnAEs(fechaLike));
                 lista.add(registro);
             }
             

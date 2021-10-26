@@ -8,7 +8,7 @@ public class ReporteComentariosBean {
 
     private DatosRevista datosRevista;
     private int numComentarios;
-    List<RegistroComentario> comentarios;
+    private List<RegistroComentario> comentarios;
 
     public ReporteComentariosBean() {
     }

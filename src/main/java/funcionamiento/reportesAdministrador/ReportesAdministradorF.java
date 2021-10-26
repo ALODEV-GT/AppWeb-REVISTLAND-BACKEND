@@ -5,6 +5,7 @@ import beans.reportes.administrador.ReporteGananciaRevistaBean;
 import beans.reportes.administrador.ReporteGananciaTotalBean;
 import beans.reportes.administrador.ReporteMasComentadaBean;
 import beans.reportes.administrador.ReportePopularesBean;
+import com.google.gson.Gson;
 import dao.reportes.administrador.ReporteGananciaAnuncioDAO;
 import dao.reportes.administrador.ReporteGananciaRevistaDAO;
 import dao.reportes.administrador.ReporteGananciaTotalDATOS;
@@ -32,23 +33,82 @@ public class ReportesAdministradorF extends Funcionamiento {
     @Override
     public void distribuirGet() {
         String reporte = request.getParameter("reporte");
-        switch (reporte) {
-            case "reporteGananciasPorRevista":
-                this.reporteGananciasPorRevista();
-                break;
-            case "reporteGananciasPorAnuncio":
-                this.reporteGananciasPorAnuncio();
-                break;
-            case "reporteGananciasTotales":
-                this.reporteGananciasTotales();
-                break;
-            case "reporteRevistasPopulares":
-                this.reporteRevistasPopulares();
-                break;
-            case "reporteRevistasMasComentadas":
-                this.reporteRevistasMasComentadas();
-                break;
+        try {
+            switch (reporte) {
+                case "reporteGananciasPorRevista":
+                    this.reporteGananciasPorRevista();
+                    break;
+                case "reporteGananciasPorAnuncio":
+                    this.reporteGananciasPorAnuncio();
+                    break;
+                case "reporteGananciasTotales":
+                    this.reporteGananciasTotales();
+                    break;
+                case "reporteRevistasPopulares":
+                    this.reporteRevistasPopulares();
+                    break;
+                case "reporteRevistasMasComentadas":
+                    this.reporteRevistasMasComentadas();
+                    break;
+                case "reporteGananciasPorRevistaNG":
+                    this.reporteGananciasPorRevistaNG();
+                    break;
+                case "reporteGananciasPorAnuncioNG":
+                    this.reporteGananciasPorAnuncioNG();
+                    break;
+                case "reporteGananciasTotalesNG":
+                    this.reporteGananciasTotalesNG();
+                    break;
+                case "reporteRevistasPopularesNG":
+                    this.reporteRevistasPopularesNG();
+                    break;
+                case "reporteRevistasMasComentadasNG":
+                    this.reporteRevistasMasComentadasNG();
+                    break;
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace(System.out);
         }
+    }
+
+    private void reporteGananciasPorRevistaNG() throws IOException {
+        String fechaInicial = request.getParameter("fechaInicial");
+        String fechaFinal = request.getParameter("fechaFinal");
+        List<ReporteGananciaRevistaBean> resources = new ReporteGananciaRevistaDAO().obtenerDatosReporte(fechaInicial, fechaFinal);
+        String json = new Gson().toJson(resources);
+        this.response.getWriter().append(json);
+    }
+
+    private void reporteGananciasPorAnuncioNG() throws IOException {
+        String fechaInicial = request.getParameter("fechaInicial");
+        String fechaFinal = request.getParameter("fechaFinal");
+        List<ReporteGananciaAnuncioBean> resources = new ReporteGananciaAnuncioDAO().obtenerDatosReporte(fechaInicial, fechaFinal);
+        String json = new Gson().toJson(resources);
+        this.response.getWriter().append(json);
+    }
+
+    private void reporteGananciasTotalesNG() throws IOException {
+        String fechaInicial = request.getParameter("fechaInicial");
+        String fechaFinal = request.getParameter("fechaFinal");
+        List<ReporteGananciaTotalBean> resources = new ReporteGananciaTotalDATOS().obtenerDatosReporte(fechaInicial, fechaFinal);
+        String json = new Gson().toJson(resources);
+        this.response.getWriter().append(json);
+    }
+
+    private void reporteRevistasPopularesNG() throws IOException {
+        String fechaInicial = request.getParameter("fechaInicial");
+        String fechaFinal = request.getParameter("fechaFinal");
+        List<ReportePopularesBean> resources = new ReportePopularesDAO().obtenerDatosReporte(fechaInicial, fechaFinal);
+        String json = new Gson().toJson(resources);
+        this.response.getWriter().append(json);
+    }
+
+    private void reporteRevistasMasComentadasNG() throws IOException {
+        String fechaInicial = request.getParameter("fechaInicial");
+        String fechaFinal = request.getParameter("fechaFinal");
+        List<ReporteMasComentadaBean> resources = new ReporteMasComentadasDAO().obtenerDatosReporte(fechaInicial, fechaFinal);
+        String json = new Gson().toJson(resources);
+        this.response.getWriter().append(json);
     }
 
     private void reporteGananciasPorRevista() {

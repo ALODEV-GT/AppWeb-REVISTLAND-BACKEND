@@ -15,7 +15,7 @@ import java.util.List;
 public class ReporteComentariosDAO {
 
     private static final String SQL_OBTENER_REVISTAS = "SELECT p.id_publicacion,p.nombre_usuario, r.nombre FROM publicacion p JOIN revista r ON(p.id_revista=r.id_revista) ORDER BY p.fecha_publicacion DESC";
-    private static final String SQL_OBTENER_REGISTROS = "SELECT nombre_usuario, contenido, fecha_comentario FROM comentario  WHERE fecha_comentario BETWEEN ? AND ?  AND id_publicacion = ?";
+    private static final String SQL_OBTENER_REGISTROS = "SELECT nombre_usuario, contenido, fecha_comentario FROM comentario  WHERE fecha_comentario BETWEEN ? AND ?  AND id_publicacion = ? ORDER BY fecha_comentario DESC";
 
     public List<ReporteComentariosBean> obtenerDatosReporte(String fechaInicial, String fechaFinal) {
         Connection conn = null;

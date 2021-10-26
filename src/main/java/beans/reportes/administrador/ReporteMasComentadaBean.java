@@ -8,7 +8,7 @@ public class ReporteMasComentadaBean {
 
     private DatosRevista datosRevista;
     private int numComentarios;
-    List<RegistroComentario> comentarios;
+    private List<RegistroComentario> comentarios;
 
     public ReporteMasComentadaBean() {
     }
