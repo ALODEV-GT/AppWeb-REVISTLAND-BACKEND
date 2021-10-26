@@ -1,5 +1,6 @@
 package funcionamiento.anuncios;
 
+import com.google.gson.Gson;
 import comunes.ConversorJson;
 import comunes.FormatearJson;
 import comunes.LeerRequest;
@@ -14,6 +15,7 @@ import dao.perfil.EtiquetaDAO;
 import funcionamiento.Funcionamiento;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -128,6 +130,8 @@ public class AnunciosF extends Funcionamiento {
                 case "obtenerRecomendacionesAnuncios":
                     this.obtenerRecomendacionesAnuncios();
                     break;
+                case "obtenerAnunciantes":
+                    this.obtenerAnunciantes();
                 default:
                     System.out.println("No existe esta opcion");
             }
@@ -135,6 +139,11 @@ public class AnunciosF extends Funcionamiento {
             Logger.getLogger(AnunciosF.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    private void obtenerAnunciantes() throws IOException {
+        List<String> categorias = new EmpresaAnuncianteDAO().obtenerEmpresasAnunciantes();
+        this.response.getWriter().append(new Gson().toJson(categorias));
     }
 
     private void obtenerRecomendacionesAnuncios() throws IOException {
