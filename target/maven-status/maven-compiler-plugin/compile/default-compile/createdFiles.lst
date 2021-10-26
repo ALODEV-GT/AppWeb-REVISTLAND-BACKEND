@@ -13,6 +13,7 @@ dao/autenticacion/UsuarioDAO.class
 beans/reportes/administrador/ReporteGananciaTotalBean.class
 dao/anuncio/PagoAnuncioDAO.class
 funcionamiento/descripcionRevista/DescripcionRevistaF.class
+dao/reportes/administrador/ReporteGananciaTotalDATOS.class
 modelo/DescripcionRevista/DescripcionRevistaM.class
 dao/anuncio/AnuncioDAO.class
 dao/anuncio/EtiquetaAnuncioDAO.class
@@ -36,6 +37,7 @@ modelo/VolumenesRevistaConsumidor/RevistaVolumenM.class
 dao/interacciones/ComentarioDAO.class
 funcionamiento/generales/GeneralesF.class
 modelo/fechaGlobal/FechaM.class
+dao/reportes/administrador/ReportePopularesDAO.class
 funcionamiento/costoDiario/DetalleCostoPorDia.class
 dao/perfil/CategoriaDAO.class
 modelo/costoDiario/RevistaCostoM.class
@@ -57,6 +59,7 @@ modelo/publicarRevista/PublicacionM.class
 modelo/suscripcion/SuscripcionM.class
 funcionamiento/Funcionamiento.class
 dao/reportes/editor/ReporteSuscripcionesDAO.class
+dao/reportes/administrador/ReporteGananciaRevistaDAO.class
 beans/registro/administrador/RegistroGananciaRevista.class
 modelo/Anuncio/AnuncioM.class
 beans/registro/comunes/RegistroMeGusta.class
@@ -83,6 +86,7 @@ funcionamiento/fechaGlobal/FechaGlobalF.class
 modelo/Anuncio/AnuncioMostrarM.class
 funcionamiento/recomendaciones/RecomendacionesF.class
 controladores/ReportesAdministradorControlador.class
+dao/reportes/administrador/ReporteMasComentadasDAO.class
 dao/descripcionRevista/DescripcionRevistaDAO.class
 dao/reportes/editor/ReporteRevistasMasGustadaDAO.class
 comunes/FormatearJson.class
@@ -91,6 +95,7 @@ beans/registro/comunes/RegistroSuscripcion.class
 funcionamiento/permisosRevista/EvaluarPermiso.class
 modelo/publicarRevista/VolumenM.class
 dao/publicar/costoPorDia/CostoPorDiaDAO.class
+dao/reportes/administrador/ReporteGananciaAnuncioDAO.class
 beans/reportes/administrador/TablaReporteGananciaRevistaBean.class
 modelo/autenticacion/UsuarioM.class
 modelo/perfil/EtiquetaM.class
@@ -105,6 +110,7 @@ controladores/GeneralesControlador.class
 funcionamiento/reportesEditor/ReportesEditorF.class
 beans/reportes/editor/ReporteComentariosBean.class
 modelo/interacciones/MeGustaM.class
+comunes/FuncionesBasicas.class
 dao/perfil/EtiquetaDAO.class
 dao/fechaGlobal/FechaGlobalDAO.class
 funcionamiento/recomendaciones/ListarRecomendaciones.class
