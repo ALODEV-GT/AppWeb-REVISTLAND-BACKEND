@@ -20,4 +20,5 @@ La aplicacion recomienda revistas a los lectores de acuerdo o las categorias y e
 
 ## Ejecucion:
 En el repositorio siguiente se encuentra el frontend.
+
 FRONTEND: https://github.com/MiDIK-BA/AppWeb-REVISTLAND-FRONT-ANGULAR
